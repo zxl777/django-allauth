@@ -69,7 +69,7 @@ class SocialAccount(models.Model):
     # [1] http://code.djangoproject.com/ticket/2495.
     # [2] http://openid.net/specs/openid-authentication-1_1.html#limits
 
-    uid = models.CharField(max_length=255)
+    uid = models.CharField(max_length=190)
     last_login = models.DateTimeField(auto_now=True)
     date_joined = models.DateTimeField(auto_now_add=True)
     extra_data = JSONField(default='{}')
@@ -103,7 +103,7 @@ class SocialToken(models.Model):
     token = models \
         .TextField(help_text='"oauth_token" (OAuth1) or access token (OAuth2)')
     token_secret = models \
-        .CharField(max_length=200,
+        .CharField(max_length=190,
                    blank=True,
                    help_text='"oauth_token_secret" (OAuth1) or refresh'
                    ' token (OAuth2)')
